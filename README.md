@@ -1,4 +1,4 @@
-Área de Código em C
+//Área de Código em C
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -200,7 +200,7 @@ int main() {
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Área de Código em Python
+//Área de Código em Python
 
 import os
 import getpass
