@@ -9,6 +9,7 @@
 #define AULAS_TOTAL 20
 
 //Estrutura das matérias
+
 struct Materia {
     char nome[40];
     float notas[QTD_NOTAS];
@@ -19,6 +20,7 @@ struct Materia {
 };
 
 // Estrutura do aluno
+
 struct Aluno {
     char nome[50];
     char RA[20];
@@ -28,6 +30,7 @@ struct Aluno {
 };
 
 // Função de login
+
 int login(struct Aluno alunos[], int qtd) {
     char raLogin[20];
     char senhaLogin[20];
@@ -39,7 +42,9 @@ int login(struct Aluno alunos[], int qtd) {
         scanf(" %s", raLogin);
         printf("Senha: ");
         scanf(" %s", senhaLogin);
-            // strcmp realizado para a comparação entre strings    
+        
+            // strcmp realizado para a comparação entre strings 
+            
         for (int i = 0; i < qtd; i++) {
             if (strcmp(raLogin, alunos[i].RA) == 0 && strcmp(senhaLogin, alunos[i].senha) == 0) {
                 printf("\nLogin efetuado!\n");
@@ -80,7 +85,9 @@ int main() {
 
         printf("Nome: ");
         scanf(" %[^\n]", alunos[i].nome);
+        
         // Leia tudo até o \n
+        
         printf("RA: ");
         scanf(" %s", alunos[i].RA);
 
@@ -106,10 +113,12 @@ int main() {
             scanf("%d", &alunos[i].materias[m].faltas);
 
             // Frequência
+            
             alunos[i].materias[m].frequencia =
                 ((float)(AULAS_TOTAL - alunos[i].materias[m].faltas) / AULAS_TOTAL) * 100;
 
             // Verificação de status
+            
             if (alunos[i].materias[m].frequencia < 75) {
                 strcpy(alunos[i].materias[m].status, "Reprovado por falta");
             } else if (alunos[i].materias[m].media >= 7) {
@@ -143,6 +152,7 @@ int main() {
     }
 
     // Criação do arquivo
+    
     arquivo = fopen("alunos.txt", "w");
     if (arquivo == NULL) {
         printf("Erro ao criar o arquivo!\n");
@@ -171,6 +181,7 @@ int main() {
     printf("\nArquivo 'alunos.txt' criado com sucesso!\n");
 
     // Limpar o terminal
+    
 #ifdef _WIN32
     system("cls");
 #else
@@ -183,6 +194,7 @@ int main() {
     }
 
     // Exibe boletim do aluno logado
+    
     printf("\n-----BOLETIM DO ALUNO-----\n");
     printf("Nome: %s\nRA: %s\n", alunos[indiceLogado].nome, alunos[indiceLogado].RA);
 
@@ -299,9 +311,8 @@ def chatbot():
             break
         else:
             print("Opção inválida. Digite de 1 a 6.")
-
-
-if __name__ == "__main__":
+            
+        if __name__ == "__main__":
     chatbot()
 
 
